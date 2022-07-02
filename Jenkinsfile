@@ -3,7 +3,7 @@ pipeline{
 	agent any
 	//agent { docker{ image  'node:current-alpine3.15' } }
 	environment{
-		dockerHome = tool 'MyDocker'
+		dockerHome = tool 'myDocker'
 		mavenHome = tool 'MyMaven'
 		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 	
