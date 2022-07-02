@@ -2,10 +2,17 @@
 pipeline{
 	agent any
 	//agent { docker{ image  'node:current-alpine3.15' } }
+	environment{
+		dockerHome = tool 'MyDocker'
+		mavenHome = tool 'MyMaven'
+		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+	
+	}
 	stages{
 		stage('Build'){
 			steps{
-				//sh 'node --version'
+				sh 'mvn --version'
+				sh 'docker version'
 				echo "$PATH"
 				echo "Build"
 				echo "$env.BUILD_NUMBER-$env.BUILD_NUMBER"
