@@ -1,21 +1,16 @@
 //Declarative Method
 pipeline{
-	//agent any
-	// agent {
-	// 	docker{
-	// 		image  'maven:3.6.3'
-	// 	}
-	// }
-	agent {
-		docker{
-			image  'node:current-alpine3.15'
-		}
-	}
+	agent any
+	//agent { docker{ image  'node:current-alpine3.15' } }
 	stages{
 		stage('Build'){
 			steps{
-				sh 'node --version'
+				//sh 'node --version'
+				echo "$PATH"
 				echo "Build"
+				echo "$env.BUILD_NUMBER-$env.BUILD_NUMBER"
+				echo "$env.BUILD_ID"
+				echo "$env.JOB_NAME"
 			}
 
 		}
