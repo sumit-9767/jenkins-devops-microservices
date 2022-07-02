@@ -5,7 +5,19 @@ pipeline{
 		stage('Build'){
 			steps{
 				echo "Build"
+			}
+
+		}
+		stage('Test'){
+			steps{
+
 				echo "test"
+
+			}
+
+		}
+		stage('Intergration Test'){
+			steps{
 				echo "Intergration Test"
 			}
 
@@ -20,9 +32,7 @@ pipeline{
 
 
 
-// git add *
-// git commit -m 
-// git push -u origin main
+// git add * git commit -m git push -u origin main
 
 
 //Scripted old method 
